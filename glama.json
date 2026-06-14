@@ -1,0 +1,63 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
+  "name": "tafsiri-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Kenyan language resources \u2014 Swahili/English civic glossary, Kikuyu guide, Luo guide, official document glossary, language detection, and civic terminology translation. 6 tools.",
+  "license": "MIT",
+  "homepage": "https://gabrielmahia.github.io",
+  "author": {
+    "name": "Gabriel Mahia",
+    "email": "contact@aikungfu.dev",
+    "url": "https://gabrielmahia.github.io"
+  },
+  "keywords": [
+    "swahili",
+    "kikuyu",
+    "luo",
+    "translation",
+    "kenya",
+    "africa",
+    "language",
+    "civic",
+    "mcp"
+  ],
+  "categories": [
+    "Language Translation",
+    "Education & Learning Tools"
+  ],
+  "tools": [
+    {
+      "name": "civic_glossary",
+      "description": "Swahili/English civic glossary"
+    },
+    {
+      "name": "kikuyu_language_guide",
+      "description": "Kikuyu language guide"
+    },
+    {
+      "name": "luo_language_guide",
+      "description": "Luo language guide"
+    },
+    {
+      "name": "document_glossary",
+      "description": "Official document glossary"
+    },
+    {
+      "name": "detect_language",
+      "description": "Language detection"
+    },
+    {
+      "name": "civic_terminology",
+      "description": "Civic terminology translation"
+    }
+  ],
+  "installation": {
+    "type": "pip",
+    "package": "tafsiri-mcp",
+    "command": "pip install tafsiri-mcp"
+  },
+  "links": {
+    "github": "https://github.com/gabrielmahia/tafsiri-mcp",
+    "pypi": "https://pypi.org/project/tafsiri-mcp"
+  }
+}
