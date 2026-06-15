@@ -2,7 +2,7 @@
 from __future__ import annotations
 from typing import Optional
 from fastmcp import FastMCP
-mcp = FastMCP(name="tafsiri-mcp", description="Kenya translation infrastructure — Swahili, Kikuyu, Luo. DEMO.")
+mcp = FastMCP(name="tafsiri-mcp", instructions="Kenya translation infrastructure — Swahili, Kikuyu, Luo. DEMO.")
 
 SWAHILI_CIVIC = {
     "serikali": "government", "kaunti": "county", "uchaguzi": "election",
