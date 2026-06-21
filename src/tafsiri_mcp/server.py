@@ -2,6 +2,7 @@
 from __future__ import annotations
 from typing import Optional
 from fastmcp import FastMCP
+from pydantic import Field
 mcp = FastMCP(name="tafsiri-mcp", instructions="Kenya translation infrastructure — Swahili, Kikuyu, Luo. DEMO.")
 
 SWAHILI_CIVIC = {
@@ -30,7 +31,8 @@ LUO_BASICS = {
 }
 
 @mcp.tool(name="swahili_english_glossary", description="Swahili-English civic and government glossary. DEMO.")
-def swahili_english_glossary(term: Optional[str] = None) -> dict:
+def swahili_english_glossary(term: Optional[str] = Field(None, description="Swahili or English term to look up e.g. 'kaunti', 'serikali', 'maji', 'shule'. Leave empty for full civic glossary.")) -> dict:
+    """Translate civic and government terminology between Swahili and English."""
     if term:
         t = term.lower()
         en = SWAHILI_CIVIC.get(t)
