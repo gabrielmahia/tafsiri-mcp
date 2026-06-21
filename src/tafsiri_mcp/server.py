@@ -1,6 +1,6 @@
 """TafsiriMCP — Kenya Translation Infrastructure (6 tools). All data DEMO."""
 from __future__ import annotations
-from typing import Optional
+from typing import Annotated, Optional
 from fastmcp import FastMCP
 from pydantic import Field
 mcp = FastMCP(name="tafsiri-mcp", instructions="Kenya translation infrastructure — Swahili, Kikuyu, Luo. DEMO.")
@@ -30,7 +30,7 @@ LUO_BASICS = {
     "luo": "Luo people", "nam": "lake", "nam lolwe": "Lake Victoria",
 }
 
-@mcp.tool(name="swahili_english_glossary", description="Swahili-English civic and government glossary. DEMO.")
+@mcp.tool(name="swahili_english_glossary", description="Swahili-English civic and government glossary. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def swahili_english_glossary(term: Optional[str] = Field(None, description="Swahili or English term to look up e.g. 'kaunti', 'serikali', 'maji', 'shule'. Leave empty for full civic glossary.")) -> dict:
     """Translate civic and government terminology between Swahili and English."""
     if term:
@@ -43,8 +43,8 @@ def swahili_english_glossary(term: Optional[str] = Field(None, description="Swah
     return {"source": "DEMO", "glossary": SWAHILI_CIVIC,
             "size": len(SWAHILI_CIVIC), "domain": "Kenya civic and government"}
 
-@mcp.tool(name="kikuyu_language_guide", description="Kikuyu language basics and resources for Kenya. DEMO.")
-def kikuyu_language_guide(term: Optional[str] = None) -> dict:
+@mcp.tool(name="kikuyu_language_guide", description="Kikuyu language basics and resources for Kenya. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
+def kikuyu_language_guide(term: Annotated[Optional[str], "Optional filter for term. Pass None to return all results."] = None) -> dict:
     if term:
         t = term.lower()
         matched = {k: v for k, v in KIKUYU_BASICS.items() if t in k or t in v}
@@ -56,8 +56,8 @@ def kikuyu_language_guide(term: Optional[str] = None) -> dict:
                          "Gĩkũyũ Cultural and Online Museum"],
             "note": "Kikuyu (Gĩkũyũ) is the first language of approximately 17% of Kenya's population."}
 
-@mcp.tool(name="luo_language_guide", description="Luo language basics and resources for Kenya. DEMO.")
-def luo_language_guide(term: Optional[str] = None) -> dict:
+@mcp.tool(name="luo_language_guide", description="Luo language basics and resources for Kenya. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
+def luo_language_guide(term: Annotated[Optional[str], "Optional filter for term. Pass None to return all results."] = None) -> dict:
     if term:
         t = term.lower()
         matched = {k: v for k, v in LUO_BASICS.items() if t in k or t in v}
@@ -68,8 +68,8 @@ def luo_language_guide(term: Optional[str] = None) -> dict:
             "resources": ["Dholuo resources at KICD", "Lake Victoria basin oral traditions project"],
             "note": "Dholuo (Luo) is spoken primarily in Nyanza and parts of Rift Valley."}
 
-@mcp.tool(name="official_document_glossary", description="Kenya official document terminology guide — forms, certificates, legal terms. DEMO.")
-def official_document_glossary(document_type: Optional[str] = None) -> dict:
+@mcp.tool(name="official_document_glossary", description="Kenya official document terminology guide — forms, certificates, legal terms. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
+def official_document_glossary(document_type: Annotated[Optional[str], "Optional filter for document type. Pass None to return all results."] = None) -> dict:
     DOCS = {
         "id_card": {"swahili": "Kitambulisho", "common_name": "ID", "issued_by": "NIIMS/NDRS", "cost_kes": 300},
         "birth_certificate": {"swahili": "Cheti cha Kuzaliwa", "issued_by": "Civil Registration Service", "cost_kes": 150},
@@ -88,8 +88,8 @@ def official_document_glossary(document_type: Optional[str] = None) -> dict:
         return {"source": "DEMO — Kenya government services", "document": document_type, "info": matched or {"note": "Document not in sample dataset. Visit ecitizen.go.ke for full list."}}
     return {"source": "DEMO — Kenya government documents", "documents": DOCS, "portal": "ecitizen.go.ke"}
 
-@mcp.tool(name="language_detection_guide", description="Guide to language detection and translation resources for Kenya. DEMO.")
-def language_detection_guide(text_sample: Optional[str] = None) -> dict:
+@mcp.tool(name="language_detection_guide", description="Guide to language detection and translation resources for Kenya. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
+def language_detection_guide(text_sample: Annotated[Optional[str], "Optional filter for text sample. Pass None to return all results."] = None) -> dict:
     KENYA_LANGUAGES = {
         "Swahili (Kiswahili)": {"code": "sw", "speakers_m": 47, "type": "Bantu", "official": True, "markers": ["na", "ya", "wa", "ni", "kwa", "au"]},
         "Kikuyu (Gĩkũyũ)": {"code": "ki", "speakers_m": 8.1, "type": "Bantu", "official": False, "markers": ["na", "nĩ", "mũ", "gĩ", "ũ"]},
@@ -112,8 +112,8 @@ def language_detection_guide(text_sample: Optional[str] = None) -> dict:
                 "masakhane": "masakhane.ai (African NLP research)"
             }}
 
-@mcp.tool(name="civic_terminology_swahili", description="Swahili translations of Kenya civic and legal processes. DEMO.")
-def civic_terminology_swahili(process: Optional[str] = None) -> dict:
+@mcp.tool(name="civic_terminology_swahili", description="Swahili translations of Kenya civic and legal processes. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
+def civic_terminology_swahili(process: Annotated[Optional[str], "Optional filter for process. Pass None to return all results."] = None) -> dict:
     PROCESSES = {
         "voter_registration": {"en": "Voter Registration", "sw": "Usajili wa Mpigakura", "how": "Register at IEBC offices or online at iebc.or.ke", "docs_needed": "National ID"},
         "land_transfer": {"en": "Land Transfer", "sw": "Uhamisho wa Ardhi", "how": "Apply at Lands Registry with consent, stamp duty payment, and title deed", "docs_needed": "Title deed, IDs, consent"},
