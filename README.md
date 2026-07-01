@@ -4,6 +4,14 @@
 [![smithery badge](https://smithery.ai/badge/@gabrielmahia/tafsiri-mcp)](https://smithery.ai/server/@gabrielmahia/tafsiri-mcp)
 
 
+---
+**Compatible with `claude-sonnet-5`** (released 2026-06-30) — Anthropic's most agentic
+Sonnet yet. Runs multi-step tool chains end-to-end without stopping short.
+Install: `pip install tafsiri-mcp` · Use with any MCP client.
+
+---
+
+
 > Kenya translation infrastructure via MCP — Swahili/English glossary, Kikuyu guide, Luo guide, official document terms, language detection, civic terminology. 6 tools.
 
 [![PyPI](https://img.shields.io/badge/PyPI-v0.1.0-blue?logo=pypi)](https://pypi.org/project/tafsiri-mcp/)
