@@ -1,4 +1,5 @@
 # tafsiri-mcp
+<!-- mcp-name: io.github.gabrielmahia/tafsiri-mcp -->
 
 [![tafsiri-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/tafsiri-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/tafsiri-mcp)
 [![smithery badge](https://smithery.ai/badge/@gabrielmahia/tafsiri-mcp)](https://smithery.ai/server/@gabrielmahia/tafsiri-mcp)

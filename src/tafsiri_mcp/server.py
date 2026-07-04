@@ -132,3 +132,7 @@ def civic_terminology_swahili(process: Optional[str] = Field(None, description="
         matched = {k: v for k, v in PROCESSES.items() if p in k or any(p in str(v[f]) for f in ["en","sw","how"])}
         return {"source": "DEMO — Kenya government processes", "process": process, "guidance": matched or PROCESSES}
     return {"source": "DEMO", "processes": PROCESSES, "portal": "ecitizen.go.ke"}
+
+def main() -> None:
+    """Console entry point."""
+    mcp.run()
