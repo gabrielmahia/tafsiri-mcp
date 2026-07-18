@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tafsiri-mcp"
-version = "0.1.3"
+version = "0.1.4"
 description = "Kenya translation infrastructure via MCP — Swahili/English glossary, Kikuyu guide, Luo guide, offici"
 readme = "README.md"
 license = { text = "MIT" }
