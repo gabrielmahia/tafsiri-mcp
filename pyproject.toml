@@ -9,7 +9,7 @@ description = "Kenya translation infrastructure via MCP — Swahili/English glos
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
-dependencies = ["fastmcp>=0.9"]
+dependencies = ["fastmcp>=2.0.0"]
 
 [project.scripts]
 tafsiri-mcp = "tafsiri_mcp.server:mcp.run"
