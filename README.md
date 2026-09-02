@@ -1,46 +1,61 @@
 # tafsiri-mcp
-<!-- mcp-name: io.github.gabrielmahia/tafsiri-mcp -->
 
-[![tafsiri-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/tafsiri-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/tafsiri-mcp)
-[![smithery badge](https://smithery.ai/badge/@gabrielmahia/tafsiri-mcp)](https://smithery.ai/server/@gabrielmahia/tafsiri-mcp)
+## Why This Exists
 
-
----
-**Compatible with `claude-sonnet-5`** (released 2026-06-30) — Anthropic's most agentic
-Sonnet yet. Runs multi-step tool chains end-to-end without stopping short.
-Install: `pip install tafsiri-mcp` · Use with any MCP client.
-
----
-
-
-> Kenya translation infrastructure via MCP — Swahili/English glossary, Kikuyu guide, Luo guide, official document terms, language detection, civic terminology. 6 tools.
-
-[![PyPI](https://img.shields.io/badge/PyPI-v0.1.0-blue?logo=pypi)](https://pypi.org/project/tafsiri-mcp/)
-[![License](https://img.shields.io/badge/License-MIT-green)](https://github.com/gabrielmahia/tafsiri-mcp)
-[![Thesis Layer](https://img.shields.io/badge/Thesis_Layer-L5-purple)](https://gabrielmahia.github.io/nairobi-stack)
-
-**1st world equivalent:** DeepL, Google Translate API, Masakhane
+Kenyan civic and legal life happens in Swahili, Kikuyu, Luo and English at once, but the terminology that matters — what a succession petition is called, what a gazette notice means — rarely appears in general translation tools. Getting a civic term wrong in the wrong language has consequences a mistranslated menu does not.
 
 ## Install
+
 ```bash
 pip install tafsiri-mcp
 ```
 
 ## Tools (6)
-| Tool | Description |
-|------|-------------|
-| `swahili_english_glossary` | Swahili-English civic and government glossary |
-| `kikuyu_language_guide` | Kikuyu (Gĩkũyũ) language basics and resources |
-| `luo_language_guide` | Luo (Dholuo) language basics and resources |
-| `official_document_glossary` | Kenya official document terminology and costs |
-| `language_detection_guide` | Language detection and translation resources for Kenya |
-| `civic_terminology_swahili` | Swahili translations of Kenya civic and legal processes |
 
+- **`swahili_english_glossary`** — Translate civic and government terminology between Swahili and English.  
+  <sub>args: term</sub>
+- **`kikuyu_language_guide`** — Return linguistic information and key phrases for the Kikuyu language.  
+  <sub>args: term</sub>
+- **`luo_language_guide`** — Return linguistic information and key phrases for the Luo language.  
+  <sub>args: term</sub>
+- **`official_document_glossary`** — Return standard terminology for Kenya official documents and certificates.  
+  <sub>args: document_type</sub>
+- **`language_detection_guide`** — Identify which Kenyan language a text sample is written in.  
+  <sub>args: text_sample</sub>
+- **`civic_terminology_swahili`** — Return Swahili terminology for Kenya government processes and civic interactions.  
+  <sub>args: process</sub>
 
-→ [The Nairobi Stack](https://gabrielmahia.github.io/nairobi-stack)
+## Example
 
-## License
-MIT © Gabriel Mahia | contact@aikungfu.dev
+```python
+from tafsiri_mcp.server import swahili_english_glossary
+
+result = swahili_english_glossary(term='urithi')
+# civic term, translation, how it is used, documents needed
+```
+
+## Claude Desktop Integration
+
+Add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "tafsiri-mcp": {
+      "command": "python",
+      "args": ["-m", "tafsiri_mcp.server"]
+    }
+  }
+}
+```
+
+## Data & Disclaimers
+
+Glossaries are reference material for civic navigation, not certified translation. For court filings or official submissions, use a sworn translator.
+
+Every tool response carries a `source` field. Responses labelled `DEMO` are
+illustrative reference data, not a live feed — verify against the authority
+named in the response before acting on it.
 
 ## Part of the East Africa Coordination Stack
 
