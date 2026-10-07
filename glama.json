@@ -1,8 +1,8 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "tafsiri-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for Kenyan language resources \u2014 Swahili/English civic glossary, Kikuyu guide, Luo guide, official document glossary, language detection, and civic terminology translation. 6 tools.",
+  "version": "0.1.4",
+  "description": "Kenya translation infrastructure via MCP — Swahili/English glossary, Kikuyu guide, Luo guide, offici",
   "license": "MIT",
   "homepage": "https://gabrielmahia.github.io",
   "author": {
@@ -36,28 +36,28 @@
   ],
   "tools": [
     {
-      "name": "civic_glossary",
-      "description": "Swahili/English civic glossary"
+      "name": "swahili_english_glossary",
+      "description": "Swahili-English civic and government glossary. DEMO."
     },
     {
       "name": "kikuyu_language_guide",
-      "description": "Kikuyu language guide"
+      "description": "Kikuyu language basics and resources for Kenya. DEMO."
     },
     {
       "name": "luo_language_guide",
-      "description": "Luo language guide"
+      "description": "Luo language basics and resources for Kenya. DEMO."
     },
     {
-      "name": "document_glossary",
-      "description": "Official document glossary"
+      "name": "official_document_glossary",
+      "description": "Kenya official document terminology guide — forms, certificates, legal terms. DEMO."
     },
     {
-      "name": "detect_language",
-      "description": "Language detection"
+      "name": "language_detection_guide",
+      "description": "Guide to language detection and translation resources for Kenya. DEMO."
     },
     {
-      "name": "civic_terminology",
-      "description": "Civic terminology translation"
+      "name": "civic_terminology_swahili",
+      "description": "Swahili translations of Kenya civic and legal processes. DEMO."
     }
   ],
   "installation": {
@@ -68,5 +68,8 @@
   "links": {
     "github": "https://github.com/gabrielmahia/tafsiri-mcp",
     "pypi": "https://pypi.org/project/tafsiri-mcp"
-  }
+  },
+  "maintainers": [
+    "gabrielmahia"
+  ]
 }
