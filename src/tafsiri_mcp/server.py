@@ -1,8 +1,11 @@
 """TafsiriMCP — Kenya Translation Infrastructure (6 tools). All data DEMO."""
 from __future__ import annotations
+
 from typing import Annotated, Optional
+
 from fastmcp import FastMCP
 from pydantic import Field
+
 mcp = FastMCP(name="tafsiri-mcp", instructions="Kenya translation infrastructure — Swahili, Kikuyu, Luo. DEMO.")
 
 SWAHILI_CIVIC = {
@@ -31,7 +34,7 @@ LUO_BASICS = {
 }
 
 @mcp.tool(name="swahili_english_glossary", description="Swahili-English civic and government glossary. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
-def swahili_english_glossary(term: Optional[str] = Field(None, description="Swahili or English term to look up e.g. 'kaunti', 'serikali', 'maji', 'shule'. Leave empty for full civic glossary.")) -> dict:
+def swahili_english_glossary(term: str | None = Field(None, description="Swahili or English term to look up e.g. 'kaunti', 'serikali', 'maji', 'shule'. Leave empty for full civic glossary.")) -> dict:
     """Translate civic and government terminology between Swahili and English."""
     if term:
         t = term.lower()
@@ -44,7 +47,7 @@ def swahili_english_glossary(term: Optional[str] = Field(None, description="Swah
             "size": len(SWAHILI_CIVIC), "domain": "Kenya civic and government"}
 
 @mcp.tool(name="kikuyu_language_guide", description="Kikuyu language basics and resources for Kenya. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
-def kikuyu_language_guide(term: Optional[str] = Field(None, description="Optional filter for term. Pass None to return all results.")) -> dict:
+def kikuyu_language_guide(term: str | None = Field(None, description="Optional filter for term. Pass None to return all results.")) -> dict:
     """Return linguistic information and key phrases for the Kikuyu language."""
     if term:
         t = term.lower()
@@ -58,7 +61,7 @@ def kikuyu_language_guide(term: Optional[str] = Field(None, description="Optiona
             "note": "Kikuyu (Gĩkũyũ) is the first language of approximately 17% of Kenya's population."}
 
 @mcp.tool(name="luo_language_guide", description="Luo language basics and resources for Kenya. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
-def luo_language_guide(term: Optional[str] = Field(None, description="Optional filter for term. Pass None to return all results.")) -> dict:
+def luo_language_guide(term: str | None = Field(None, description="Optional filter for term. Pass None to return all results.")) -> dict:
     """Return linguistic information and key phrases for the Luo language."""
     if term:
         t = term.lower()
@@ -71,7 +74,7 @@ def luo_language_guide(term: Optional[str] = Field(None, description="Optional f
             "note": "Dholuo (Luo) is spoken primarily in Nyanza and parts of Rift Valley."}
 
 @mcp.tool(name="official_document_glossary", description="Kenya official document terminology guide — forms, certificates, legal terms. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
-def official_document_glossary(document_type: Optional[str] = Field(None, description="Optional filter for document type. Pass None to return all results.")) -> dict:
+def official_document_glossary(document_type: str | None = Field(None, description="Optional filter for document type. Pass None to return all results.")) -> dict:
     """Return standard terminology for Kenya official documents and certificates."""
     DOCS = {
         "id_card": {"swahili": "Kitambulisho", "common_name": "ID", "issued_by": "NIIMS/NDRS", "cost_kes": 300},
@@ -92,7 +95,7 @@ def official_document_glossary(document_type: Optional[str] = Field(None, descri
     return {"source": "DEMO — Kenya government documents", "documents": DOCS, "portal": "ecitizen.go.ke"}
 
 @mcp.tool(name="language_detection_guide", description="Guide to language detection and translation resources for Kenya. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
-def language_detection_guide(text_sample: Optional[str] = Field(None, description="Optional filter for text sample. Pass None to return all results.")) -> dict:
+def language_detection_guide(text_sample: str | None = Field(None, description="Optional filter for text sample. Pass None to return all results.")) -> dict:
     """Identify which Kenyan language a text sample is written in."""
     KENYA_LANGUAGES = {
         "Swahili (Kiswahili)": {"code": "sw", "speakers_m": 47, "type": "Bantu", "official": True, "markers": ["na", "ya", "wa", "ni", "kwa", "au"]},
@@ -117,7 +120,7 @@ def language_detection_guide(text_sample: Optional[str] = Field(None, descriptio
             }}
 
 @mcp.tool(name="civic_terminology_swahili", description="Swahili translations of Kenya civic and legal processes. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
-def civic_terminology_swahili(process: Optional[str] = Field(None, description="Optional filter for process. Pass None to return all results.")) -> dict:
+def civic_terminology_swahili(process: str | None = Field(None, description="Optional filter for process. Pass None to return all results.")) -> dict:
     """Return Swahili terminology for Kenya government processes and civic interactions."""
     PROCESSES = {
         "voter_registration": {"en": "Voter Registration", "sw": "Usajili wa Mpigakura", "how": "Register at IEBC offices or online at iebc.or.ke", "docs_needed": "National ID"},

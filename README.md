@@ -1,4 +1,5 @@
 # tafsiri-mcp
+<!-- mcp-name: io.github.gabrielmahia/tafsiri-mcp -->
 
 ## Why This Exists
 

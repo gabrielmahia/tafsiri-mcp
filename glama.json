@@ -1,7 +1,7 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "tafsiri-mcp",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Kenya translation infrastructure via MCP — Swahili/English glossary, Kikuyu guide, Luo guide, offici",
   "license": "MIT",
   "homepage": "https://gabrielmahia.github.io",
