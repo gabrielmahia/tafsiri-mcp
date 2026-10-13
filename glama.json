@@ -37,27 +37,27 @@
   "tools": [
     {
       "name": "swahili_english_glossary",
-      "description": "Swahili-English civic and government glossary. DEMO."
+      "description": "Translate civic and government terms between Swahili and English from a small glossary, or list the whole glossary. Use when someone needs the Swahili or English word for an official term. term is looked up in both directions; a term not in the glossary returns null for both directions with a note, not a guess. Returns the source label, the term, swahili_to_english, english_to_swahili and a note, or the glossary and its size when no term is given. A short civic glossary labelled DEMO, not a translation service: use a professional translator for important documents. Read-only; no side effects."
     },
     {
       "name": "kikuyu_language_guide",
-      "description": "Kikuyu language basics and resources for Kenya. DEMO."
+      "description": "Basic Kikuyu (Gikuyu) phrases and facts: how many people belong to the community, the script and learning resources. Use when someone wants an introduction to Kikuyu or a basic phrase. term filters the phrase list; an unmatched term returns empty matches. Returns the source label, the matching phrases or the basics, an ethnic-group population (about 8.1 million, 2019 census, which is not a count of speakers), the script, resources and a note. A small reference labelled DEMO: not a dictionary. Read-only; no side effects."
     },
     {
       "name": "luo_language_guide",
-      "description": "Luo language basics and resources for Kenya. DEMO."
+      "description": "Basic Dholuo (Luo) phrases and facts: community size, script and resources. Use when someone wants an introduction to Dholuo or a basic phrase. term filters the phrase list; an unmatched term returns empty matches. Returns the source label, the matching phrases or the basics, an ethnic-group population (about 5.07 million, fourth largest in the 2019 census, which is not a count of speakers), the script, resources and a note. A small reference labelled DEMO: not a dictionary. Read-only; no side effects."
     },
     {
       "name": "official_document_glossary",
-      "description": "Kenya official document terminology guide — forms, certificates, legal terms. DEMO."
+      "description": "Explain Kenyan official documents (such as ID, birth certificate, KRA PIN) with the issuing office and where to apply. Use when someone asks what a document is called or where to get it. document_type is matched by name (spaces become underscores); an unmatched type returns a note pointing to ecitizen.go.ke instead of a guess. Returns the source label, the document and the matching information, or all documents and the portal when none is given. A sample labelled DEMO: confirm with the issuing office. Read-only; no side effects."
     },
     {
       "name": "language_detection_guide",
-      "description": "Guide to language detection and translation resources for Kenya. DEMO."
+      "description": "Help identify which Kenyan language a text is in and where to find language tools: the languages with speaker numbers, type, markers, and translation and NLP resources. Use when someone is unsure which language a text sample is. This tool does NOT detect the language itself: text_sample is accepted but the same guide is returned. Returns the languages with their common marker words and tool pointers such as Google Translate and Masakhane. Speaker figures are rough and labelled DEMO. Read-only; no side effects."
     },
     {
       "name": "civic_terminology_swahili",
-      "description": "Swahili translations of Kenya civic and legal processes. DEMO."
+      "description": "Swahili and English terms for common Kenyan civic processes (voter registration, getting an ID and others), with how to do each. Use when someone needs the Swahili wording or steps for a civic process. process matches by name or by text in the entries; if none match, ALL processes are returned. Returns the source label, the process and the guidance, or all processes and the portal. A short list labelled DEMO: check the issuing office. Read-only; no side effects."
     }
   ],
   "installation": {
