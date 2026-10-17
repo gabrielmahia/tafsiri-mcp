@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.gabrielmahia/tafsiri-mcp",
-  "description": "MCP server for Swahili translation and language grounding (tafsiri = translate)",
+  "description": "Swahili, Kikuyu and Luo civic glossaries and language guides for Kenya. Small reference sets.",
   "repository": {
     "url": "https://github.com/gabrielmahia/tafsiri-mcp",
     "source": "github"
   },
-  "version": "0.1.6",
+  "version": "0.1.7",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "tafsiri-mcp",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "transport": {
         "type": "stdio"
       }
