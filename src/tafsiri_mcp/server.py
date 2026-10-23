@@ -1,12 +1,20 @@
 """TafsiriMCP — Kenya Translation Infrastructure (6 tools). All data DEMO."""
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError
+from importlib.metadata import version as _pkg_version
 from typing import Annotated, Optional
 
 from fastmcp import FastMCP
 from pydantic import Field
 
-mcp = FastMCP(name="tafsiri-mcp", instructions="Kenya translation infrastructure — Swahili, Kikuyu, Luo. DEMO.")
+try:
+    _VERSION = _pkg_version("tafsiri-mcp")
+except PackageNotFoundError:  # a source tree that was never installed
+    _VERSION = "0+unknown"
+
+
+mcp = FastMCP(name="tafsiri-mcp", instructions="Kenya translation infrastructure — Swahili, Kikuyu, Luo. DEMO.", version=_VERSION)
 
 SWAHILI_CIVIC = {
     "serikali": "government", "kaunti": "county", "uchaguzi": "election",
