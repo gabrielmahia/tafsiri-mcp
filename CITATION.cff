@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "tafsiri-mcp"
+abstract: "Kenya translation and language resources: Swahili/English civic glossary, Kikuyu and Luo guides, official document terminology, language detection"
+version: "0.1.11"
+authors:
+  - family-names: "Mahia"
+    given-names: "Gabriel"
+repository-code: "https://github.com/gabrielmahia/tafsiri-mcp"
+license: "MIT"
